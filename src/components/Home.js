@@ -412,7 +412,7 @@ function Home() {
           <div className='flex h-[345px] gap-[89px] pt-3 '>
           <div className='w-[306px] h-[341px] rounded-[13px] pt-4 pl-2 '>
              
-             <img src={view2} className='w-[306px] h-[228px] rounded-[13px] ' /> 
+             <img src={view5} className='w-[306px] h-[228px] rounded-[13px] ' /> 
              <div className='w-[284.11px] h-[97.96px] pt-2 '>
                <div className='w-[284.11px] h-[57.14px] rounded-[13px]'>
                  <div className='flex items-center w-[167px] h-[26.37px] rounded-[13px]'>
@@ -446,7 +446,7 @@ function Home() {
            </div>
            <div className='w-[306px] h-[341px] rounded-[13px] pt-4 pl-2 '>
              
-              <img src={view2} className='w-[306px] h-[228px] rounded-[13px] ' /> 
+              <img src={view6} className='w-[306px] h-[228px] rounded-[13px] ' /> 
               <div className='w-[284.11px] h-[97.96px] pt-2 '>
                 <div className='w-[284.11px] h-[57.14px] rounded-[13px]'>
                   <div className='flex items-center w-[167px] h-[26.37px] rounded-[13px]'>
@@ -480,7 +480,7 @@ function Home() {
             </div>
             <div className='w-[306px] h-[341px] rounded-[13px] pt-4 pl-2 '>
              
-              <img src={view2} className='w-[306px] h-[228px] rounded-[13px] ' /> 
+              <img src={view7} className='w-[306px] h-[228px] rounded-[13px] ' /> 
               <div className='w-[284.11px] h-[97.96px] pt-2 '>
                 <div className='w-[284.11px] h-[57.14px] rounded-[13px]'>
                   <div className='flex items-center w-[167px] h-[26.37px] rounded-[13px]'>
@@ -514,7 +514,7 @@ function Home() {
             </div>
             <div className='w-[306px] h-[341px] rounded-[13px] pt-4 pl-2 '>
              
-              <img src={view2} className='w-[306px] h-[228px] rounded-[13px] ' /> 
+              <img src={view8} className='w-[306px] h-[228px] rounded-[13px] ' /> 
               <div className='w-[284.11px] h-[97.96px] pt-2 '>
                 <div className='w-[284.11px] h-[57.14px] rounded-[13px]'>
                   <div className='flex items-center w-[167px] h-[26.37px] rounded-[13px]'>
