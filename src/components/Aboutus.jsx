@@ -392,7 +392,7 @@ and luxurious living spaces.
                                 <p className='text-left w-[280px] h-[48px]  custom-font font-[400] text-[20px] leading-[30px] text-[#101828] '>Orlando Diggs</p>
                                 <p className='text-left w-[280px] h-[48px]  custom-font font-[400] text-[18px] leading-[28px] text-[#002855]'>Customer Success</p>
                             </div>
-                            <p className='text-left w-[280px] h-[48px] pt-5 custom-font font-[400] text-[16px] leading-[24px] text-[#667085] '>Lead CX at Wealthsimple. Former PagerDuty and Sqreen.</p>
+                            <p className='text-left w-[280px] h-[48px] pt-5 inter-font font-[400] text-[16px] leading-[24px] text-[#667085] '>Lead CX at Wealthsimple. Former PagerDuty and Sqreen.</p>
                         </div>
                         <div className='flex pt-[130px] w-[280px] h-[24px] gap-[20px] '>
                         <button  >
