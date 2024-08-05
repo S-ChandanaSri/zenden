@@ -5,6 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
       colors: {
         'blue-custom': '#3D52A0',
         'washed-blue': {
@@ -21,6 +22,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ],
 }
 

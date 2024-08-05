@@ -42,7 +42,6 @@ import ellipse15 from '../images/landingpage/ellipse15.png';
 import ellipse16 from '../images/landingpage/ellipse16.png';
 import ellipse17 from '../images/landingpage/ellipse17.png';
 import ellipse18 from '../images/landingpage/ellipse18.png';
-
 import icon from  '../images/landingpage/Icon.png';
 import pluscircle from '../images/landingpage/pluscircle.png';
 import minuscircle from '../images/landingpage/minuscircle.png';
