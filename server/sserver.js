@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const fs = require('fs');
+require('dotenv').config();
 
 const app = express();
 const port = 3001;
@@ -11,15 +12,15 @@ app.use(express.json());
 
 
 const connection = mysql.createConnection({
-    host: 'mysql-31ca3eaa-proerty-7efc.e.aivencloud.com',
-    user: 'avnadmin',
-    password: 'AVNS_t_PE2ZfGcL2AIgXscOM',
-    database: 'list',
-    port: 27949,
-    ssl: {
-      ca: fs.readFileSync("C:/Users/asus/Downloads/ca (4).pem"), 
-    }
-  });
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+  ssl: {
+    ca: fs.readFileSync(process.env.SSL_CA_PATH), 
+  }
+});
 
   connection.connect((err) => {
     if (err) {
