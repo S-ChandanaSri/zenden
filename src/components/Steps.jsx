@@ -409,7 +409,7 @@ const handlepeople=(secondoption)=>()=>{
   return (
     <div className='flex flex-col min-h-screen bg-[#FFFFFF]'>
       <Navbar />
-      <main className='flex-grow'>
+      <div className='flex-grow'>
         <div className='flex items-center min-h-screen'>
           {step === 0 && (
             <>
@@ -780,7 +780,7 @@ const handlepeople=(secondoption)=>()=>{
 
         </div>
         <Footer isLoading={isLoading} buttonText="NEXT" onClick={handleNext} onBack={handleBack} step={step} setStep={setStep}/>
-      </main>
+      </div>
     </div>
   );
 }
