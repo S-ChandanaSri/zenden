@@ -1,3 +1,30 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+}
+.image-container {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block; 
+  margin: 0;
+  padding: 0;
+}
+
+.slider-container {
+  grid-area: slider;
+}
 
 @tailwind base;
 @tailwind components;
