@@ -31,7 +31,7 @@ export default function Listing() {
     }
   }
 
-  const filteredList = listt.filter((dat) => dat.listing.toLowerCase().includes(query.toLowerCase()));
+  const filteredList = listt.filter((dat) =>dat.listing && dat.listing.toLowerCase().includes(query.toLowerCase()));
   const remainingRows = 5 - filteredList.length;
 
   return (

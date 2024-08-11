@@ -5,6 +5,11 @@ import Aboutus from './components/Aboutus';
 import Listing from './components/Listing';
 import Listings from './components/Listings';
 import Steps from './components/Steps';
+import Imagesstep from './components/Imagesstep';
+
+
+
+
 
 
 function App() {
@@ -17,6 +22,11 @@ function App() {
             <Route path='/propertylisting' element={<Listing />} />
             <Route path='/listing' element={<Listings />} />
             <Route path='/steps' element={<Steps />} />
+            <Route path='/images' element={<Imagesstep />} />
+   
+
+
+
           </Routes>
         </Router>
       </div>

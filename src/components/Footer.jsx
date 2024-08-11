@@ -1,12 +1,17 @@
-// Footer.jsx
-import React from 'react';
+
+import React,{useState} from 'react';
 import { ThreeDots } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 
-export default function Footer({ isLoading, buttonText, onClick }) {
+export default function Footer({ isLoading, buttonText, onClick, onBack }) {
+  const [step, setStep] = useState(0);
   const navigate = useNavigate();
   const handleBackButton = () => {
-    navigate(-1); // Navigate to the previous page
+    if (onBack) {
+      onBack(); 
+    } else {
+      navigate(-1); 
+    }
   };
 
   return (
