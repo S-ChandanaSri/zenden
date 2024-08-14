@@ -280,7 +280,7 @@ app.post('/imageslist', (req, res) => {
   const listingId = req.body.id; 
 
   let imageInsertCount = 0;
-  let firstImageUrl = null; // Track the URL of the first image
+  let firstImageUrl = null; 
   let lastImageId = null;
 
   const insertNextImage = () => {
@@ -310,9 +310,9 @@ app.post('/imageslist', (req, res) => {
 
     const image = images[imageInsertCount];
     const sql = "INSERT INTO images (listing_id, image_url) VALUES (?, ?)";
-    const values = [listingId, image.preview];  // Use 'preview' for image_url
+    const values = [listingId, image.preview]; 
 
-    console.log("Inserting image with values:", values); // Log the values being inserted
+    console.log("Inserting image with values:", values); 
 
     connection.query(sql, values, (err, result) => {
       if (err) {
@@ -324,7 +324,7 @@ app.post('/imageslist', (req, res) => {
       
       // Set the first image URL
       if (firstImageUrl === null) {
-        firstImageUrl = image.preview; // Save the URL of the first image
+        firstImageUrl = image.preview; 
         console.log("First image URL set to:", firstImageUrl);
       }
 
