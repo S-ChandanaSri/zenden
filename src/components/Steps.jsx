@@ -75,6 +75,7 @@ setSelectedOption(option);
 const[placetype,setPlacetype]=useState(null);
 const[peopletype,setPeopletype]=useState(null);
   const [isClicked, setIsClicked] = useState(null);
+  const [currentstep,setCurrentstep]=useState(0)
  
 const handletype=(firstoption)=>()=>{
   setPlacetype(firstoption);
@@ -92,6 +93,9 @@ const handlepeople=(secondoption)=>()=>{
 
   const handleBack = () => {
     setStep((prevStep) => (prevStep - 1)); 
+    if (currentstep > 0) {
+      setCurrentstep(prevStep => prevStep - 1);
+    }
   };
 
   const changeHandler = (selectedOption) => {
@@ -184,12 +188,16 @@ const handlepeople=(secondoption)=>()=>{
 
   const handleNext = () => {
     if (step === 0) {
+
       setStep((prevStep) => prevStep + 1);
+      setCurrentstep((prevStep) => prevStep + 1);
+      
     } else if (step === 1) {
       setIsLoading(true);
       setTimeout(() => {
         setIsLoading(false);
         setStep((prevStep) => prevStep + 1);
+        setCurrentstep((prevStep) => prevStep + 1);
       }, 3000);
     } else if (step === 2) {
       if (selectedOption) {console.log("sssssssssssssss:", selectedOption);}
@@ -226,6 +234,7 @@ const handlepeople=(secondoption)=>()=>{
       setTimeout(() => {
         setIsLoading(false);
         setStep((prevStep) => prevStep + 1);
+        setCurrentstep((prevStep) => prevStep + 1);
       }, 3000);
     } else if (step === 3) {
 
@@ -261,12 +270,14 @@ const handlepeople=(secondoption)=>()=>{
       setTimeout(() => {
         setIsLoading(false);
         setStep((prevStep) => prevStep + 1);
+        setCurrentstep((prevStep) => prevStep + 1);
       }, 3000);
     }else if (step === 4) {
         setIsLoading(true);
         setTimeout(() => {
           setIsLoading(false);
           setStep((prevStep) => prevStep + 1);
+          setCurrentstep((prevStep) => prevStep + 1);
         }, 3000);
       }else if (step === 5) {
 
@@ -301,6 +312,7 @@ const handlepeople=(secondoption)=>()=>{
         setTimeout(() => {
           setIsLoading(false);
           setStep((prevStep) => prevStep + 1);
+          setCurrentstep((prevStep) => prevStep + 1);
         }, 3000);
       }else if (step === 6) {
         if (listingid) {
@@ -332,6 +344,7 @@ const handlepeople=(secondoption)=>()=>{
         setTimeout(() => {
           setIsLoading(false);
           setStep((prevStep) => prevStep + 1);
+          setCurrentstep((prevStep) => prevStep + 1);
         }, 3000);
       }
       else if (step === 7) {
@@ -365,6 +378,7 @@ const handlepeople=(secondoption)=>()=>{
         setTimeout(() => {
           setIsLoading(false);
           setStep((prevStep) => prevStep + 1);
+          setCurrentstep((prevStep) => prevStep + 1);
         }, 3000);
       }else if (step === 8) {
 
@@ -404,7 +418,11 @@ const handlepeople=(secondoption)=>()=>{
       }
   };
 
-  const optons = ['House', 'Apartment', 'Villa','House', 'Apartment', 'Villa','House', 'Apartment', 'Villa',];
+  const optons = ['House', 'Apartment', 'Villa','Duplex', 'Penthouse', 'Farmhouse','Bungalow', 'Flats', 'Studiohouse',];
+
+
+ 
+
 
   return (
     <div className='flex flex-col min-h-screen bg-[#FFFFFF]'>
@@ -413,38 +431,38 @@ const handlepeople=(secondoption)=>()=>{
         <div className='flex items-center min-h-screen'>
           {step === 0 && (
             <>
-              <p className='w-[568px] relative left-[143px] custo-font text-[45px] font-[500] leading-[67.5px] tracking-[0.46px] text-[#000000]'>
-                You’re just three steps to set up your ZenDen
+              <p className='w-[578px] relative left-[93px] custo-font text-[45px] font-[500] leading-[67.5px] tracking-[0.46px] text-[#000000]'>
+                You’re just three steps to <span className='pl-[58px] '> set up your ZenDen</span>
               </p>
               <div className='flex flex-col items-center'>
-                <div className='flex w-[623px] h-[115.07px] relative bottom-[40px] left-[131px] gap-[10px]'>
+                <div className='flex w-[623px] h-[115.07px] relative bottom-[40px] left-[141px] gap-[10px]'>
                   <div className='flex flex-col items-center w-[448px] h-[107px]'>
                     <p className='w-[448px] h-[53px] top-[-1px] custom-font text-[35px] font-[400] leading-[52.5px] tracking-[0.46px] text-[#000000]'>
                       1. Tell us about your place
                     </p>
-                    <p className='w-[394px] h-[54px] top-[-1px] custom-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] text-[#000000] text-left'>
+                    <p className='w-[424px] h-[54px] top-[-1px]  custom-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] text-[#000000] left-[20px]  '>
                       Share some basic info, like where it is and how many guests can stay
                     </p>
                   </div>
                   <img src={mattress1} className='w-[129px] h-[115.07px]' />
                 </div>
-                <div className='flex w-[648px] h-[110px] relative top-[39px] left-[131px] gap-[61px]'>
+                <div className='flex w-[648px] h-[110px] relative top-[39px] left-[141px] gap-[61px]'>
                   <div className='flex flex-col items-center w-[389px] h-[110px] gap-[3px]'>
                     <p className='w-[448px] h-[53px] top-[-1px] custom-font text-[35px] font-[400] leading-[52.5px] tracking-[0.46px] pl-12 text-[#000000]'>
                       2. Make it stand out
                     </p>
-                    <p className='w-[394px] h-[54px] top-[-1px] custom-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] pl-12 text-[#000000] text-left'>
+                    <p className='w-[434px] h-[54px] top-[-1px] custom-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] pl-12 text-[#000000] '>
                       Add 5 or more photos plus a title and a little description
                     </p>
                   </div>
                   <img src={mattress3} className='w-[168px] h-[101.14px]' />
                 </div>
-                <div className='flex w-[648px] h-[145px] relative top-[95px] left-[131px] gap-[10x]'>
+                <div className='flex w-[648px] h-[145px] relative top-[95px] left-[141px] gap-[10x]'>
                   <div className='flex flex-col items-center w-[458px] h-[137px] gap-[3px]'>
                     <p className='w-[448px] h-[53px] top-[-1px] custom-font text-[35px] font-[400] leading-[52.5px] tracking-[0.46px] pl-4 text-[#000000]'>
                       3. Finish up and publish
                     </p>
-                    <p className='w-[394px] h-[54px] top-[-1px] custom-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] pl-4 text-[#000000] text-left'>
+                    <p className='w-[444px] h-[54px] top-[-1px] custom-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] pl-4 text-[#000000] text-left'>
                       Choose if you’d like to start with an experienced guest, set up a starting price, and publish your listing
                     </p>
                   </div>
@@ -455,17 +473,18 @@ const handlepeople=(secondoption)=>()=>{
           )}
           {step === 1 && (
             <>
+            
               <div className='flex h-[555px]'>
                 <div className='w-[509px] h-[114px] relative top-[1px] left-[148px] gap-[46px]'>
                   <div className='flex flex-col items-center text-left pl-11 pt-7 w-[448px] h-[114px]'>
-                    <p className='w-[573px] h-[60px] relative top-[224px] left-[173px] custo-font text-[40px] font-[400] leading-[60px] tracking-[0.46px] text-[#000000]'>
+                    <p className='w-[573px] h-[60px] relative top-[224px] left-[133px] custo-font text-[40px] font-[400] leading-[60px] tracking-[0.46px] text-[#000000]'>
                       1. Tell us about your place
                     </p>
                     <p className='w-[394px] h-[54px] relative top-[224px] left-[83px] custo-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] text-[#000000]'>
                       Share some basic info, like where it is and how many guests can stay
                     </p>
                   </div>
-                  <img src={d} className='h-[571.17px] w-[700px] relative top-[-106px] left-[692px]' />
+                  <img src={d} className='h-[571.17px] w-[700px] relative top-[-106px] left-[672px]' />
                 </div>
               </div>
             </>
@@ -483,10 +502,10 @@ const handlepeople=(secondoption)=>()=>{
     <div key={index} className='h-[133px] gap-[10px]'>
       <button
         onClick={() => handlecolor(option)}
-        className={`h-[133px] w-[186px] rounded-[7px] border-[1px] py-[29px] px-[15px] gap-[10px] ${color === option ? 'border-blue-500 border-4' : 'border-[#8E98A8]'}`}
+        className={`h-[133px] w-[186px] rounded-[7px] border-[1px] py-[29px] px-[15px] gap-[10px] ${color === option ? 'border-blue-700 border-[5px]' : 'border-[#8E98A8]'}`}
       >
-        <div className='w-[80px] h-[96px] gap-[10px]'>
-          <img src={option === 'House' ? phhouse : option === 'Apartment' ? phbuild : phmaterial} className='w-[48px] h-[48px]' />
+        <div className='w-[90px] h-[96px] gap-[10px]'>
+          <img src={option === 'House' ? phhouse : option === 'Apartment' ? phbuild : option === 'Flats' ? phbuild : option === 'Bungalow' ? phbuild:phhouse} className='w-[48px] h-[48px]' />
           <p className='w-[80px] h-[38px] custo-font text-[25px] font-[400] leading-[37.5px] tracking-[0.46px] text-[#000000]'>{option}</p>
         </div>
       </button>
@@ -519,7 +538,7 @@ const handlepeople=(secondoption)=>()=>{
             <div className='flex items-center pt-2 w-[620px] h-[74px] gap-[161px] '>
               <div className='w-[401px] h-[74px] gap-[9px] '>
               <p className='text-left w-[401px] h-[38px]  custo-font text-[25px] font-[400] leading-[37.5px] tracking-[0.46px] text-[#000000]'>  A room  </p>
-              <p className=' w-[401px] h-[27px]  custo-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] text-[#000000]'> Guest will have only a small part of the house to live or enjoy</p>
+              <p className=' w-[401px] h-[27px]  custo-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] text-[#000000] text-left '> Guest will have only a small part of the house to live or enjoy</p>
               </div>
               <img src={cilroom} className='w-[58px] h-[58px]  ' />
             </div>
@@ -561,8 +580,7 @@ const handlepeople=(secondoption)=>()=>{
 
             </div>
             </div>
-           
-
+          
 
             </>
           )}
@@ -694,10 +712,10 @@ const handlepeople=(secondoption)=>()=>{
   step === 7 && (
     <>
       <div className='flex flex-col items-center h-[670px] relative left-[390px] top-[50px]'>
-        <div className='border-[black] w-[1166px] h-[914px] rounded-[15px]'>
+        <div className='border-[black] w-[1066px] h-[914px] rounded-[15px]'>
           <p className='w-[392px] h-[53px] relative top-[30px] custo-font text-[35px] font-[400] leading-[52.5px] tracking-[0.46px] text-[#000000]'> Let’s start with basics </p> 
-          <p className='w-[322px] h-[27px] relative top-[70px] custo-font text-[18px] font-[500] leading-[27px] tracking-[0.46px] text-[#000000]'> What kind of bathrooms do guest have ? </p>            
-          <div className='relative top-[70px] '>
+          <p className='w-[392px] h-[27px] relative top-[70px] custo-font text-[18px] font-[500] leading-[27px] tracking-[0.46px] text-[#000000]'> What kind of bathrooms do guest have ? </p>            
+          <div className='relative top-[40px] '>
             <Amenities2 handleplus={()=>setPrivate(privateroom+1)} handleminus={()=>setPrivate(privateroom-1)}  label1="Private and attached"  label2="Its connected to the guest room and just for them" count={privateroom} />
             <div className='w-[667px] relative top-[127px] left-[2px] border-[1px] border-[#8E98A8]'></div>
 
@@ -733,10 +751,10 @@ const handlepeople=(secondoption)=>()=>{
 {step===8 && (
 
   <>
-  <div className='flex flex-col relative left-[252px] rounded-[15px]  '>
-    <div className='w-[688px] h-[80px] relative top-[-80px] left-[0px] '>
-    <p className='w-[573px] h-[53px] relative custo-font text-[35px] font-[400] leading-[52.5px] tracking-[0.46px] text-[#000000]'> Who else might be there ? </p>            
-    <p className='w-[688px] h-[27px] relative custo-font text-[18px] font-[300] leading-[27px] tracking-[0.46px] text-[#000000]'> Guest need to know whether they will encounter with other people there </p>            
+  <div className='flex flex-col relative left-[252px] rounded-[15px] '>
+    <div className='w-[668px] h-[80px] relative top-[-80px] left-[0px] '>
+    <p className='w-[523px] h-[53px] relative custo-font text-[35px] font-[400]  leading-[52.5px] tracking-[0.46px] text-[#000000]'> Who else might be there ? </p>            
+    <p className='w-[548px] h-[27px] relative custo-font text-[18px] font-[300] pt-2 leading-[27px] tracking-[0.46px] text-[#000000]'> Guest need to know whether they will encounter with other people there </p>            
     </div>
     <div className=' grid grid-cols-3 gap-4'>
 
@@ -747,24 +765,24 @@ const handlepeople=(secondoption)=>()=>{
 
         </div>
       </button>
-      <button onClick={handlepeople('family')} className={`h-[133px] w-[206px] rounded-[7px] border-[1px] border-[#8E98A8] py-[29px] px-[15px] flex flex-col items-center  ${peopletype === "family" ? 'border-blue-500 border-4' : 'border-[#8E98A8]'} `} >
+      <button onClick={handlepeople('family')} className={`h-[133px] w-[206px] rounded-[7px] border-[1px] border-[#8E98A8] py-[29px] px-[15px] flex flex-col items-center  ${peopletype === "family" ? 'border-blue-700 border-[5px]' : 'border-[#8E98A8]'} `} >
         <div className='w-[90px] h-[94px] ga-[10px] '>
-          <img src={peopleline} className='w-[48px] h-[48px] '  />
-          <p className='w-[160px] h-[36px] relative custo-font text-[24px] font-[400] leading-[36px] tracking-[0.46px] pr-10 text-[#000000]'> My family </p>            
+          <img src={peopleline} className='w-[48px] h-[48px] relative left-[10px] '  />
+          <p className='w-[160px] h-[36px] relative right-[25px]  custo-font text-[24px] font-[400] leading-[36px] tracking-[0.46px] pr-10 text-[#000000]'> My family </p>            
 
         </div>
       </button>
-      <button onClick={handlepeople('other')} className={`h-[133px] w-[210px] rounded-[7px] border-[1px] border-[#8E98A8] py-[29px] px-[15px] flex flex-col items-center ${peopletype === "other" ? 'border-blue-500 border-4' : 'border-[#8E98A8]'} `} >
+      <button onClick={handlepeople('other')} className={`h-[133px] w-[210px] rounded-[7px] border-[1px] border-[#8E98A8] py-[29px] px-[15px] flex flex-col items-center ${peopletype === "other" ? 'border-blue-700 border-[5px]' : 'border-[#8E98A8]'} `} >
         <div className='w-[80px] h-[94px] ga-[10px] '>
-          <img src={peoplesharp} className='w-[48px] h-[48px] '  />
-          <p className='w-[200px] h-[36px] relative custo-font text-[24px] font-[400] leading-[36px] tracking-[0.46px] text-[#000000] pr-5 '> Other guets </p>            
+          <img src={peoplesharp} className='w-[48px] h-[48px] relative left-[10px] '  />
+          <p className='w-[200px] h-[36px] relative right-[45px]  custo-font text-[24px] font-[400] leading-[36px] tracking-[0.46px] text-[#000000] pr-5 '> Other guests </p>            
 
         </div>
       </button>
-      <button onClick={handlepeople('roomates')} className={`h-[133px] w-[186px] rounded-[7px] border-[1px] border-[#8E98A8] py-[29px] px-[15px] flex flex-col items-center ${peopletype === "roomates" ? 'border-blue-500 border-4' : 'border-[#8E98A8]'} `} >
+      <button onClick={handlepeople('roomates')} className={`h-[133px] w-[186px] rounded-[7px] border-[1px] border-[#8E98A8] py-[29px] px-[15px] flex flex-col items-center ${peopletype === "roomates" ? 'border-blue-700 border-[5px]' : 'border-[#8E98A8]'} `} >
         <div className='w-[80px] h-[94px] ga-[10px] '>
-          <img src={peoplesharp} className='w-[39px] h-[39px] '  />
-          <p className='w-[80px] h-[36px] relative custo-font text-[24px] font-[400] leading-[36px] tracking-[0.46px] text-[#000000]'> Roomates </p>            
+          <img src={peoplesharp} className='w-[39px] h-[39px] relative left-[10px] '  />
+          <p className='w-[80px] h-[36px] relative right-[20px] custo-font text-[24px] font-[400] leading-[36px] tracking-[0.46px] text-[#000000]'> Roomates </p>            
 
         </div>
       </button>
@@ -779,7 +797,7 @@ const handlepeople=(secondoption)=>()=>{
 
 
         </div>
-        <Footer isLoading={isLoading} buttonText="NEXT" onClick={handleNext} onBack={handleBack} step={step} setStep={setStep}/>
+        <Footer isLoading={isLoading} buttonText="NEXT" onClick={handleNext} onBack={handleBack} step={step} setStep={setStep} currentstep={currentstep} />
       </div>
     </div>
   );

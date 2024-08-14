@@ -2,9 +2,10 @@ import React,{useState} from 'react';
 import { ThreeDots } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 
-export default function Footer({ isLoading, buttonText, onClick, onBack, currentstep }) {
-  const [step, setStep] = useState(0);
-  const navigate = useNavigate();
+
+export default function Footerimages({ isLoading, buttonText, onClick, onBack, currentstep }) {
+
+    const navigate = useNavigate();
   const handleBackButton = () => {
     if (onBack) {
       onBack();
@@ -14,13 +15,13 @@ export default function Footer({ isLoading, buttonText, onClick, onBack, current
   };
   
 
-  const totalSteps = 8;
+  const totalSteps = 5;
  
 
   const progressPercentage = (currentstep / totalSteps) * 100;
   return (
     <>
-  <div className=' h-[5px] bg-[#E0E0E0] relative'>
+  <div className='w-full h-[5px] bg-[#E0E0E0] relative'>
     <div style={{ width: `${progressPercentage}%` ,
      transition: 'width 0.5s ease-in-out', 
      backgroundColor: "", 
@@ -49,6 +50,5 @@ export default function Footer({ isLoading, buttonText, onClick, onBack, current
     </div>
   </div>
 </>
-
-  );
+  )
 }
