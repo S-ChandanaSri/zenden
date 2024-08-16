@@ -9,6 +9,9 @@ import Imagesstep from './components/Imagesstep';
 import Edit from './components/Edit';
 import Slider from './components/Slider';
 import Payment from './components/Payment';
+import Place from './components/Place';
+
+
 
 
 
@@ -27,6 +30,8 @@ function App() {
             <Route path='/edit' element={<Edit />} />
             <Route path='/slider' element={<Slider />} />
             <Route path='/payment' element={<Payment />} />
+            <Route path='/place' element={<Place />} />
+
 
 
 

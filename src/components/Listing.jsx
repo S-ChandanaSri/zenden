@@ -148,7 +148,7 @@ export default function Listing() {
         <tbody>
         {filteredList.map((dat) => (
     <tr key={dat.id}>
-        <td className="flex items-center justify-around w-[244px] h-[136.33px] p-[8px] border-b border-[#E7EAEE]">
+        <td className="flex items-center justify-around w-[249px] h-[182.33px] p-[8px] border-b border-[#E7EAEE]">
             {dat.image ? (
                 <img 
                     src={dat.image} 

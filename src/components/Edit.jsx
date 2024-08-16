@@ -50,10 +50,10 @@ export default function Edit() {
 
     return (
         <>
-            <div className='flex flex-col min-h-screen'>
+            <div className='flex flex-col h-[555px]'>
                 <Navbar />
-                <div className='flex-grow'>
-                    <div className='h-[801px]'>
+                <div className='h-[555px]'>
+                    
                         <div className='w-[744px] h-[49.5px] relative top-[29px] flex justify-between'>
                             <img src={mdi} className='w-[45px] h-[35px] pl-3' />
                             <p className='w-[136px] h-[36px] custo-font text-[24px] font-[500] leading-[36px] tracking-[0.46px] text-[#000000]'>
@@ -66,13 +66,13 @@ export default function Edit() {
                                 <img
                                     src={image}
                                     alt={`Image ${index}`}
-                                    className='relative top-[150px] left-[70px] w-[682px] h-[549px] rounded-[10px]'
+                                    className='relative top-[160px] left-[130px] w-[682px] h-[549px] rounded-[10px]'
                                     style={getImageStyle} 
                                 />
                             )}
                         </div>
                         <div>
-                            <div className='w-[159px] h-[36px] relative left-[950px] bottom-[400px]'>
+                            <div className='w-[159px] h-[36px] relative left-[1100px] bottom-[390px]'>
                                 <div className='w-[150px] h-[30px]'>
                                     <button
                                         className='w-[71px] h-[30px] custo-font text-[20px] font-[400] relative right-[90px] leading-[30px] tracking-[0.46px] text-[#000000]'
@@ -90,7 +90,7 @@ export default function Edit() {
                             </div>
                             {details && (
                                 <>
-                                    <div className='w-[397px] h-[73px] relative left-[860px] bottom-[350px]'>
+                                    <div className='w-[397px] h-[73px] relative left-[970px] bottom-[350px]'>
                                         <p className='w-[397px] h-[30px] custo-font text-[20px] font-[400] leading-[30px] tracking-[0.46px] text-[#000000]'>
                                             Caption
                                         </p>
@@ -98,12 +98,12 @@ export default function Edit() {
                                             Mention what is special about the space like special furniture and couch etc
                                         </p>
                                     </div>
-                                    <div className='relative left-[860px] bottom-[330px] w-[393px] h-[150px] rounded-[4px] border-[0.5px] border-[#000000] py-[11px] px-[10px]'></div>
+                                    <textarea className='relative left-[970px] bottom-[330px] w-[393px] h-[150px] rounded-[4px] border-[0.5px] border-[#000000] py-[11px] px-[10px]'></textarea>
                                 </>
                             )}
                             {edit && (
                                 <>
-                                    <div className='w-[500px] h-[400px] relative left-[860px] bottom-[340px] '>
+                                    <div className='w-[500px] h-[300px] relative left-[980px] bottom-[290px] '>
                                         <div className='flex flex-col justify-evenly w-[332px] h-[63.43px]  mb-6 '>
                                             <p className='w-[332px] h-[27px] custo-font text-[18px] font-[400] leading-[27px] tracking-[0.46px] text-[#000000]' >Brightness</p>
                                             <Slider className='w-[332px] relative bottom-8'
@@ -144,14 +144,10 @@ export default function Edit() {
                                 </>
                             )}
                         </div>
-                        <button 
-                            onClick={handleBack} 
-                            className='absolute left-[70px] bottom-[50px] bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded'>
-                            Back
-                        </button>
-                    </div>
+                        <Footer/>
+                 
                 </div>
-                <Footer />
+               
             </div>
         </>
     );
